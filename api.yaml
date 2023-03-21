@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: django_telegram_bot APIs
+  version: '0.1'
+
+paths:
+  /link_to_telegram:
+    post:
+      tags:
+      - telegram
+      description: Link user account to telegram user
+      requestBody: 
+        content:
+          application/json:
+            encoding: {}
+            schema:
+              required:
+              - username
+              - alias
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: jazra
+                alias:
+                  type: string
+                  example: jazraTeleAccount
+      responses:
+        '200':
+          description: 'Ok'
+        '400':
+          description: 'Bad Request'
+  /send_to_telegram:
+    post:
+      tags:
+      - telegram
+      description: Send greeting message with username to user's telegram
+      requestBody: 
+        content:
+          application/json:
+            encoding: {}
+            schema:
+              required:
+              - username
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: jazra
+      responses:
+        '200':
+          description: 'Ok'
+        '400':
+          description: 'Bad Request'
+        
