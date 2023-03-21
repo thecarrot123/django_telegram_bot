@@ -2,7 +2,7 @@
 
 ## About the project 
 
-This project is about linking a django user with their telegram account where you can:
+This project is about linking a django user with their telegram account where they can:
 * Send data from server to a specific user telegram (e.g. notifications, confirmation code, etc.).
 * Receive data from user via telegram bot and handle some requests (e.g. some info about the user).
 
@@ -52,10 +52,10 @@ TELEGRAM = {
     python3 manage.py runbot
     ```
     > This command will only run the bot and will not run the server.
-    > To run the server you should run in another terminal.
-    > `python3 manage.py runserver 0.0.0.0:8080`
+    > To run the server you should run something like `python3 manage.py runserver 0.0.0.0:8080` in another terminal.
 
 ## Notes
 
-* Alias is unique
-* Sending `link_to_telegram` request to a linked user will save the new alias and will set chat_id to None.
+* Alias should be unique for users.
+* Sending `link_to_telegram` request to a linked user will save the new `alias` and will set `chat_id` to `None`.
+* Check `api.yaml` to see existing endpoints.
